@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chuyện của hai đứa</title>
+<style>
+body {
+    background: linear-gradient(to bottom, #fff8f0, #ffe8e0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+h2 {
+    text-align:center;
+    margin-bottom: 25px;
+}
+.question-block {
+    opacity: 0;
+    transition: opacity 0.6s;
+    margin-bottom: 20px;
+    border: 1px solid #f0dfe0;
+    border-radius: 15px;
+    padding: 15px;
+    background: #fff8f7;
+    position: relative;
+    max-height: 250px; /* card gọn */
+}
+.question-block.active {
+    opacity: 1;
+}
+.question-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.answer-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 60px;
+    margin-bottom: 10px;
+}
+.next-btn {
+    display: block;
+    padding: 10px 20px;
+    margin: 0 auto 15px auto;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #f5b0c2;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.next-btn:hover {
+    background: #f07aa0;
+}
+.signature {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    clip-path: polygon(50% 0%, 61% 15%, 75% 15%, 85% 25%, 85% 40%, 75% 60%, 50% 80%, 25% 60%, 15% 40%, 15% 25%, 25% 15%, 39% 15%);
+    animation: floatUp 3s linear infinite;
+    opacity: 0.8;
+    pointer-events: none;
+}
+@keyframes floatUp {
+    0% {transform: translateY(0) scale(0.5); opacity: 0.8;}
+    100% {transform: translateY(-300px) scale(1); opacity: 0;}
+}
+img.flower {
+    width: 50px;
+    display: block;
+    margin-bottom: 10px;
+}
+.heart-small {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    animation: beat 1s infinite;
+}
+@keyframes beat {
+    0%, 100% {transform: scale(1);}
+    50% {transform: scale(1.3);}
+}
+.sparkle::after {
+    content: "✨";
+    position: absolute;
+    right: -15px;
+    top: -10px;
+    font-size: 16px;
+    animation: twinkle 1.5s infinite;
+}
+@keyframes twinkle {
+    0%, 100% {opacity:0;}
+    50% {opacity:1;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Chuyện của hai đứa trước khi bắt đầu hành trình mới 💌</h2>
+
+<!-- Các câu hỏi -->
+<div class="question-block active">
+  <img class="flower" src="https://i.postimg.cc/SR2b0sZ6/flower.png" alt="flower">
+  <div class="heart-small"></div>
+  <div class="question-text sparkle">1. Chúng ta có cùng quan điểm về việc quản lý tài chính không?<br>
+      <small>(Ai giữ tiền, có tài khoản chung không, chi tiêu cá nhân đến mức nào là hợp lý?)</small>
+  </div>
+  <textarea class="answer-input" placeholder="Nhập câu trả lời của bạn..."></textarea>
+</div>
+
+<div class="question-block">
+  <img class="flower" src="https://i.postimg.cc/SR2b0sZ6/flower.png" alt="flower">
+  <div class="heart-small"></div>
+  <div class="question-text sparkle">2. Cả hai mong muốn cuộc sống sau cưới sẽ như thế nào?<br>
+      <small>(Ở riêng hay ở cùng gia đình, định cư ở đâu, nhịp sống và không gian riêng ra sao?)</small>
+  </div>
+  <textarea class="answer-input" placeholder="Nhập câu trả lời của bạn..."></textarea>
+</div>
+
+<div class="question-block">
+  <img class="flower" src="https://i.postimg.cc/SR2b0sZ6/flower.png" alt="flower">
+  <div class="heart-small"></div>
+  <div class="question-text sparkle">3. Chúng ta có cùng suy nghĩ về việc sinh con và cách nuôi dạy con không?<br>
+      <small>(Thời điểm sinh con, số lượng con, vai trò mỗi người trong việc chăm sóc và dạy dỗ.)</small>
+  </div>
+  <textarea class="answer-input" placeholder="Nhập câu trả lời của bạn..."></textarea>
+</div>
+
+<div class="question-block">
+  <img class="flower" src="https://i.postimg.cc/SR2b0sZ6/flower.png" alt="flower">
+  <div class="heart-small"></div>
+  <div class="question-text sparkle">4. Khi có mâu thuẫn, chúng ta sẽ giải quyết thế nào?<br>
+      <small>(Im lặng, tranh luận thẳng thắn, hay cần “thời gian nguội”?)</small>
+  </div>
+  <textarea class="answer-input" placeholder="Nhập câu trả lời của bạn..."></textarea>
+</div>
+
+<div class="question-block">
+  <img class="flower" src="https://i.postimg.cc/SR2b0sZ6/flower.png" alt="flower">
+  <div class="heart-small"></div>
+  <div class="question-text sparkle">5. Gia đình hai bên can thiệp đến mức nào trong cuộc sống của chúng ta?<br>
+      <small>(Ranh giới giữa “hiếu thảo” và “chịu ảnh hưởng”.)</small>
+  </div>
+  <textarea class="answer-input" placeholder="Nhập câu trả lời của bạn..."></textarea>
+</div>
+
+<!-- Thêm các câu 6–10 tương tự -->
+
+<button class="next-btn">Next</button>
+<div class="signature">– Công chúa của anh 🤍</div>
+</div>
+
+<script>
+const questions = document.querySelectorAll('.question-block');
+let current = 0;
+
+document.querySelector('.next-btn').addEventListener('click', () => {
+    createHeart();
+    if(current < questions.length-1){
+        current++;
+        questions[current].classList.add('active');
+        questions[current].scrollIntoView({behavior: "smooth"});
+    } else {
+        alert("Chúc mừng! Bạn đã hoàn thành tất cả câu hỏi 💖");
+    }
+});
+
+// Trái tim bay nền
+function createHeart() {
+    for(let i=0;i<2;i++){
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.top = Math.random() * window.innerHeight + 'px';
+        heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+    }
+}
+setInterval(createHeart, 1000);
+</script>
+</body>
+</html>
